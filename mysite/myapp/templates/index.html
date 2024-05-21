@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+  <head>
+    <title>Car Rent</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  </head>
+
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    
+    <div class="site-wrap" id="home-section">
+
+      <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+          <div class="site-mobile-menu-close mt-3">
+            <span class="icon-close2 js-menu-toggle"></span>
+          </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+      </div>
+
+
+
+      <header class="site-navbar site-navbar-target" role="banner">
+
+        <div class="container">
+          <div class="row align-items-center position-relative">
+
+            <div class="col-3 ">
+              <div class="site-logo">
+                <a href="{% static 'index.html' %}">(Имя компании)</a>
+              </div>
+            </div>
+
+            <div class="col-9  text-right">
+              
+
+              <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span class="icon-menu h3 text-white"></span></a></span>
+
+              
+
+              <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+                <ul class="site-menu main-menu js-clone-nav ml-auto ">
+<!--                  <li><a href="index.html" class="nav-link">Home</a></li>-->
+<!--                  <li><a href="services.html" class="nav-link">Services</a></li>-->
+                  <li style="font-size: 20px;"><a href="{% url 'catal' %}" class="nav-link">Каталог</a></li>
+                  <li class="active"; style="font-size: 20px;"><a href="{% url 'home' %}" class="nav-link">О нас</a></li>
+<!--                  <li><a href="blog.html" class="nav-link">Blog</a></li>-->
+                  <li style="font-size: 20px;"><a href="{% url 'contact' %}" class="nav-link">Связаться с нами</a></li>
+                </ul>
+              </nav>
+            </div>
+
+
+          </div>
+        </div>
+
+      </header>
+
+    <div class="ftco-blocks-cover-1">
+      <div class="ftco-cover-1 overlay innerpage" style="background-image: url({% static 'images/hero_2.jpg' %})">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h1>О нас</h1>
+              <p style="font-size: 23px;">(тут будет слоган компании)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-5 mb-lg-0 order-lg-2">
+            <img src="{% static 'images/hero_2.jpg' %}" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-lg-4 mr-auto">
+            <h2>Наша компания</h2>
+            <p style="font-size: 20px;">Описание компании</p>
+            <p style="font-size: 20px;">Вторая сноска описания</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!--    <div class="site-section bg-light">-->
+<!--      <div class="container">-->
+<!--        <div class="row justify-content-center text-center mb-5 section-2-title">-->
+<!--&lt;!&ndash;          <div class="col-md-6">&ndash;&gt;-->
+<!--&lt;!&ndash;            <span class="text-primary">Our Team</span>&ndash;&gt;-->
+<!--&lt;!&ndash;            <h2 class="mb-4">Meet Our Team</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis provident eius ratione velit, voluptas laborum nemo quas ad necessitatibus placeat?</p>&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--        </div>-->
+<!--        <div class="row align-items-stretch">-->
+
+<!--          <div class="col-lg-4 col-md-6 mb-5">-->
+<!--            <div class="post-entry-1 h-100 person-1">-->
+<!--              -->
+<!--                <img src="images/person_1.jpg" alt="Image"-->
+<!--                 class="img-fluid">-->
+<!--            -->
+<!--              <div class="post-entry-1-contents">-->
+<!--                <span class="meta">Founder</span>-->
+<!--                <h2>James Doe</h2>-->
+<!--                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="col-lg-4 col-md-6 mb-5">-->
+<!--            <div class="post-entry-1 h-100 person-1">-->
+<!--              -->
+<!--                <img src="images/person_2.jpg" alt="Image"-->
+<!--                 class="img-fluid">-->
+<!--            -->
+<!--              <div class="post-entry-1-contents">-->
+<!--                <span class="meta">Founder</span>-->
+<!--                <h2>James Doe</h2>-->
+<!--                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-lg-4 col-md-6 mb-5">-->
+<!--            <div class="post-entry-1 h-100 person-1">-->
+<!--              -->
+<!--                <img src="images/person_3.jpg" alt="Image"-->
+<!--                 class="img-fluid">-->
+<!--            -->
+<!--              <div class="post-entry-1-contents">-->
+<!--                <span class="meta">Founder</span>-->
+<!--                <h2>James Doe</h2>-->
+<!--                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-lg-4 col-md-6 mb-5">-->
+<!--            <div class="post-entry-1 h-100 person-1">-->
+<!--              -->
+<!--                <img src="images/person_4.jpg" alt="Image"-->
+<!--                 class="img-fluid">-->
+<!--            -->
+<!--              <div class="post-entry-1-contents">-->
+<!--                <span class="meta">Founder</span>-->
+<!--                <h2>James Doe</h2>-->
+<!--                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-lg-4 col-md-6 mb-5">-->
+<!--            <div class="post-entry-1 h-100 person-1">-->
+<!--              -->
+<!--                <img src="images/person_5.jpg" alt="Image"-->
+<!--                 class="img-fluid">-->
+<!--            -->
+<!--              <div class="post-entry-1-contents">-->
+<!--                <span class="meta">Founder</span>-->
+<!--                <h2>James Doe</h2>-->
+<!--                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-lg-4 col-md-6 mb-5">-->
+<!--            <div class="post-entry-1 h-100 person-1">-->
+<!--              -->
+<!--                <img src="images/person_1.jpg" alt="Image"-->
+<!--                 class="img-fluid">-->
+<!--            -->
+<!--              <div class="post-entry-1-contents">-->
+<!--                <span class="meta">Founder</span>-->
+<!--                <h2>James Doe</h2>-->
+<!--                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <img src="{% static 'images/hero_1.jpg' %}" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-lg-4 ml-auto">
+            <h2>История компании</h2>
+            <p style="font-size: 20px;">История</p>
+            <p style="font-size: 20px;">Вторая сноска истории</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container site-section mb-5">
+      <div class="row justify-content-center text-center">
+        <div class="col-7 text-center mb-5">
+          <h2>Как это работает</h2>
+          <p>Какое-то описание</p>
+        </div>
+      </div>
+      <div class="how-it-works d-flex">
+        <div class="step">
+          <span class="number"><span>01</span></span>
+          <span class="caption">Время &amp; Место</span>
+        </div>
+        <div class="step">
+          <span class="number"><span>02</span></span>
+          <span class="caption">Автомобиль</span>
+        </div>
+        <div class="step">
+          <span class="number"><span>03</span></span>
+          <span class="caption">Детали сделки</span>
+        </div>
+        <div class="step">
+          <span class="number"><span>04</span></span>
+          <span class="caption">Проверка</span>
+        </div>
+        <div class="step">
+          <span class="number"><span>05</span></span>
+          <span class="caption">Готово</span>
+        </div>
+
+      </div>
+    </div>
+
+    
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <h2 class="footer-heading mb-4"; style="font-size: 25px;">О Нас</h2>
+                <p style="font-size: 20px;">Тут нужна какая-нибудь китайская мудрость))</p>
+          </div>
+<!--          <div class="col-lg-8 ml-auto">-->
+<!--            <div class="row">-->
+<!--              <div class="col-lg-3">-->
+<!--                <h2 class="footer-heading mb-4">Quick Links</h2>-->
+<!--                <ul class="list-unstyled">-->
+<!--                  <li><a href="#">About Us</a></li>-->
+<!--                  <li><a href="#">Testimonials</a></li>-->
+<!--                  <li><a href="#">Terms of Service</a></li>-->
+<!--                  <li><a href="#">Privacy</a></li>-->
+<!--                  <li><a href="#">Contact Us</a></li>-->
+<!--                </ul>-->
+<!--              </div>-->
+<!--              <div class="col-lg-3">-->
+<!--                <h2 class="footer-heading mb-4">Quick Links</h2>-->
+<!--                <ul class="list-unstyled">-->
+<!--                  <li><a href="#">About Us</a></li>-->
+<!--                  <li><a href="#">Testimonials</a></li>-->
+<!--                  <li><a href="#">Terms of Service</a></li>-->
+<!--                  <li><a href="#">Privacy</a></li>-->
+<!--                  <li><a href="#">Contact Us</a></li>-->
+<!--                </ul>-->
+<!--              </div>-->
+<!--              <div class="col-lg-3">-->
+<!--                <h2 class="footer-heading mb-4">Quick Links</h2>-->
+<!--                <ul class="list-unstyled">-->
+<!--                  <li><a href="#">About Us</a></li>-->
+<!--                  <li><a href="#">Testimonials</a></li>-->
+<!--                  <li><a href="#">Terms of Service</a></li>-->
+<!--                  <li><a href="#">Privacy</a></li>-->
+<!--                  <li><a href="#">Contact Us</a></li>-->
+<!--                </ul>-->
+<!--              </div>-->
+<!--              <div class="col-lg-3">-->
+<!--                <h2 class="footer-heading mb-4">Quick Links</h2>-->
+<!--                <ul class="list-unstyled">-->
+<!--                  <li><a href="#">About Us</a></li>-->
+<!--                  <li><a href="#">Testimonials</a></li>-->
+<!--                  <li><a href="#">Terms of Service</a></li>-->
+<!--                  <li><a href="#">Privacy</a></li>-->
+<!--                  <li><a href="#">Contact Us</a></li>-->
+<!--                </ul>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <div class="border-top pt-5">
+              <p>
+                <i class="icon-heart text-danger" aria-hidden="true"></i>Название сайта &copy;<script>document.write(new Date().getFullYear());</script></a>
+            </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+    </div>
+
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.sticky.js' %}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+
+    <script src="{% static 'js/main.js' %}"></script>
+
+  </body>
+
+</html>
+

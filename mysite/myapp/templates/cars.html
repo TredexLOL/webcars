@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ru">
+{% load static %}
+<head>
+    <title>Car Rent</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="{% static 'https://fonts.googleapis.com/css?family=DM+Sans:300,400,700&display=swap' %}"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+
+<div class="site-wrap" id="home-section">
+
+    <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close mt-3">
+                <span class="icon-close2 js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+
+
+    <header class="site-navbar site-navbar-target" role="banner">
+
+        <div class="container">
+            <div class="row align-items-center position-relative">
+
+                <div class="col-3 ">
+                    <div class="site-logo">
+                        <a href="{% static 'index.html' %}">(Имя компании)</a>
+                    </div>
+                </div>
+
+                <div class="col-9  text-right">
+
+
+                    <span class="d-inline-block d-lg-none"><a href="#"
+                                                              class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span
+                            class="icon-menu h3 text-white"></span></a></span>
+
+
+                    <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+                        <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                            <!--                  <li><a href="index.html" class="nav-link">Home</a></li>-->
+                            <!--                  <li><a href="services.html" class="nav-link">Services</a></li>-->
+                            <li class="active" ; style="font-size: 20px;"><a href="{% url 'catal' %}" class="nav-link">Каталог</a>
+                            </li>
+                            <li style="font-size: 20px;"><a href="{% url 'home' %}" class="nav-link">О нас</a></li>
+                            <!--                  <li><a href="blog.html" class="nav-link">Blog</a></li>-->
+                            <li style="font-size: 20px;"><a href="{% url 'contact' %}" class="nav-link">Связаться с
+                                нами</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+
+            </div>
+        </div>
+
+    </header>
+
+    <div class="ftco-blocks-cover-1">
+        <div class="ftco-cover-1 overlay innerpage" style="background-image: url({% static 'images/hero_2.jpg' %})">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <h1>Наши автомобили</h1>
+                        <!--              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-section bg-light">
+        <div class="container">
+            <div class="row">
+                {% for i in cars %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="item-1">
+                        <a href="{% url 'description' car_id=i.id %}"><img src="{{ i.images.url }}" alt="Image"
+                                                                           class="img-fluid"></a>
+                        <div class="item-1-contents">
+                            <div class="text-center">
+                                <h3><a href="#">{{i.mark}} {{i.model}}</a></h3>
+                                <div class="rating">
+                                    <span class="icon-star text-warning"></span>
+                                    <span class="icon-star text-warning"></span>
+                                    <span class="icon-star text-warning"></span>
+                                    <span class="icon-star text-warning"></span>
+                                    <span class="icon-star text-warning"></span>
+                                </div>
+                                <div class="rent-price"><span>{{i.price}} P</span></div>
+                            </div>
+                            <ul class="specs">
+                                <li>
+                                    <span>Год</span>
+                                    <span class="spec">{{i.year}}</span>
+                                </li>
+                                <li>
+                                    <span>Цвет</span>
+                                    <span class="spec">{{i.color}}</span>
+                                </li>
+                                <li>
+                                    <span>Коробка передач</span>
+                                    <span class="spec">{{i.transmission}}</span>
+                                </li>
+                                <li>
+                                    <span>Топливо</span>
+                                    <span class="spec">{{i.fuel}}</span>
+                                </li>
+                            </ul>
+                            <div class="d-flex action">
+                                <a href="{% url 'description' car_id=i.id %}" class="btn btn-primary">Покупка</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="container site-section mb-5">
+        <div class="row justify-content-center text-center">
+            <div class="col-7 text-center mb-5">
+                <h2>Как это работает</h2>
+                <p>Какое-то описание</p>
+            </div>
+        </div>
+        <div class="how-it-works d-flex">
+            <div class="step">
+                <span class="number"><span>01</span></span>
+                <span class="caption">Время &amp; Место</span>
+            </div>
+            <div class="step">
+                <span class="number"><span>02</span></span>
+                <span class="caption">Автомобиль</span>
+            </div>
+            <div class="step">
+                <span class="number"><span>03</span></span>
+                <span class="caption">Детали сделки</span>
+            </div>
+            <div class="step">
+                <span class="number"><span>04</span></span>
+                <span class="caption">Проверка</span>
+            </div>
+            <div class="step">
+                <span class="number"><span>05</span></span>
+                <span class="caption">Готово</span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <h2 class="footer-heading mb-4" ; style="font-size: 25px" ;>О нас</h2>
+                    <p style="font-size: 20px" ;>Сюда какую-нибудь мудрость</p>
+                </div>
+                <!--          <div class="col-lg-8 ml-auto">-->
+                <!--            <div class="row">-->
+                <!--              <div class="col-lg-3">-->
+                <!--                <h2 class="footer-heading mb-4">Quick Links</h2>-->
+                <!--                <ul class="list-unstyled">-->
+                <!--                  <li><a href="#">About Us</a></li>-->
+                <!--                  <li><a href="#">Testimonials</a></li>-->
+                <!--                  <li><a href="#">Terms of Service</a></li>-->
+                <!--                  <li><a href="#">Privacy</a></li>-->
+                <!--                  <li><a href="#">Contact Us</a></li>-->
+                <!--                </ul>-->
+                <!--              </div>-->
+                <!--              <div class="col-lg-3">-->
+                <!--                <h2 class="footer-heading mb-4">Quick Links</h2>-->
+                <!--                <ul class="list-unstyled">-->
+                <!--                  <li><a href="#">About Us</a></li>-->
+                <!--                  <li><a href="#">Testimonials</a></li>-->
+                <!--                  <li><a href="#">Terms of Service</a></li>-->
+                <!--                  <li><a href="#">Privacy</a></li>-->
+                <!--                  <li><a href="#">Contact Us</a></li>-->
+                <!--                </ul>-->
+                <!--              </div>-->
+                <!--              <div class="col-lg-3">-->
+                <!--                <h2 class="footer-heading mb-4">Quick Links</h2>-->
+                <!--                <ul class="list-unstyled">-->
+                <!--                  <li><a href="#">About Us</a></li>-->
+                <!--                  <li><a href="#">Testimonials</a></li>-->
+                <!--                  <li><a href="#">Terms of Service</a></li>-->
+                <!--                  <li><a href="#">Privacy</a></li>-->
+                <!--                  <li><a href="#">Contact Us</a></li>-->
+                <!--                </ul>-->
+                <!--              </div>-->
+                <!--              <div class="col-lg-3">-->
+                <!--                <h2 class="footer-heading mb-4">Quick Links</h2>-->
+                <!--                <ul class="list-unstyled">-->
+                <!--                  <li><a href="#">About Us</a></li>-->
+                <!--                  <li><a href="#">Testimonials</a></li>-->
+                <!--                  <li><a href="#">Terms of Service</a></li>-->
+                <!--                  <li><a href="#">Privacy</a></li>-->
+                <!--                  <li><a href="#">Contact Us</a></li>-->
+                <!--                </ul>-->
+                <!--              </div>-->
+                <!--            </div>-->
+                <!--          </div>-->
+            </div>
+            <div class="row pt-5 mt-5 text-center">
+                <div class="col-md-12">
+                    <div class="border-top pt-5">
+                        <p>
+                            <i class="icon-heart text-danger" aria-hidden="true"></i>Название сайта &copy;<script>
+                            document.write(new Date().getFullYear());
+                        </script>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.animateNumber.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+<script src="js/aos.js"></script>
+
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
+
